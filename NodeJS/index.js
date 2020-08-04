@@ -13,6 +13,7 @@ var{p,q} = a
 Thus here,
 p=22 & q=33
 */
+var student_details_con = require('./Controllers/student_details_con.js');
 
 //calling express function
 var app = express();
@@ -21,3 +22,7 @@ app.use(bodyParser.json());
 
 //start express server
 app.listen(3000, () => console.log('Server started at port: 3000'));
+
+
+//to execute get request
+app.use('/student_details', student_details_con);
