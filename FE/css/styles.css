@@ -1,0 +1,131 @@
+*{
+    box-sizing: border-box;
+    font-family: 'Recursive', sans-serif;
+    
+}
+
+body{
+    background-color: aliceblue;
+}
+
+/*Start: Navbar*/
+#header-nav{
+    background-color: #4e82b4;
+    border-radius: 0;
+    border: 0;
+    border-bottom: 1px solid navy;
+}
+/*Logo*/
+#logo-img {
+    background: url('../images/Logo.jpg') no-repeat;
+    height: 50px;
+    width: 100px;
+    margin: 10px 10px 10px 2px;
+  }
+
+  #nav-list {
+    margin-top: 10px;
+  }
+  #nav-list a {
+    color: #FFFFFF;
+    padding-top: 15px;
+  }
+  #nav-list a:hover {
+    color: aliceblue;
+    font-size: 1.2em;
+  }
+
+  .navbar-header .icon-bar {
+    border: 1px solid #FFFFFF;
+    float: right;
+    clear: both;
+  }
+  .navbar-header button.navbar-toggle {
+    clear: both;
+    margin-top: -55px;
+    border: 1px solid #FFFFFF;
+  }
+
+  .navbar-header button.navbar-toggle:hover, .navbar-header button.navbar-toggle:focus{
+    background-color: #4e82b4;
+  }
+/*End: Navbar*/
+
+/*Start: Sidebar*/
+.sidebar {
+    background-color: #4e82b4 ;
+    position: fixed;
+    left: 0px;
+    top: 71px;
+    bottom: 0px;
+    width: 122px;
+    text-align: center;
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+    font-size: 1.01em;
+  }
+
+  .sidebar ul {
+    list-style: none;
+    padding: 0px; 
+  }
+
+  .sidebar li {
+    padding-top: 3px;
+    padding-bottom: 3px; 
+    border-left: 1px solid navy;
+    border-right: 1px solid navy;
+    border-bottom: 1px solid navy;
+  }
+
+  .sidebar a {
+    margin-left: 10px;
+    text-decoration: none;
+    color: #FFFFFF;
+    
+  }
+
+  .sidebar a:hover {
+    color: aliceblue;
+    font-size: 1.1em;
+  }
+  
+  .sidebar.fixed {
+    -webkit-transform: translateX(0);
+    transform: translateX(0); 
+  }
+/*End: Sidebar*/
+
+/*Start: Body*/
+.wrapper{
+    margin: 13px 10px 10px 136px;  
+    background-color: aliceblue;
+}
+
+.wrapper form select, .wrapper form input{
+    height: 22px;
+    padding: 1px 2px 1px 2px;
+    width: 140px;
+    margin: 5px 20px 10px 0px;
+    border: 1px solid navy;
+}
+
+.wrapper form input{
+    width: 200px;
+}
+
+.wrapper form button{
+    padding: 2px 2px 2px 2px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 0px;
+    border: 2px solid navy;
+    font-weight: bolder;
+    width: 100px;
+    color: navy;
+    background-color: #FFFFFF;
+}
+.wrapper form button:hover{
+    font-size: 1.2em;
+}
+/*End: Body*/
