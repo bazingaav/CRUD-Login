@@ -59,7 +59,24 @@ app.post('/', (req, res) => {
     })
 });
 
-
+/* Updating existing record */
+app.patch("/", (req, res, next) => {
+    var reqBody = req.body;
+    let update = `UPDATE student_details set name = ?, age = ?, school = ?, grade = ?, div = ?, status = ? WHERE id = ?`;
+    let parameters = [reqBody.name,reqBody.age,reqBody.school,reqBody.grade,reqBody.div,reqBody.status,reqBody.id];
+    student_details.run(update, parameters, (err, docs) => {
+            if (!err) {
+                console.log("Record updated");
+                res.status(200).json({ updatedID: this.changes });
+                
+            }
+            else{
+                console.log('Error in updating student_details: '+ JSON.stringify(err,undefined,2));
+                res.status(400).json({ "error": res.message });
+            }
+            
+        });
+});
 
 
 module.exports = app;
