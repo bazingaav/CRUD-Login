@@ -1,16 +1,19 @@
 const express = require('express');
 var router = express.Router();
+var cors = require('cors')
+
 
 var {student_details} = require('../Models/student_details');
 
 
-
+router.use(cors())
 // localhost:3000/student_details
 /* Viewing all records in DB*/
 router.get('/', (req, res) => {
     let sql = 'SELECT * from student_details';
     student_details.all(sql,(err,docs) => {
         if(!err){
+            console.log("Details loaded");
             res.send(docs);
         }
         else{
