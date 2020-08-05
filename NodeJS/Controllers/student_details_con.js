@@ -78,5 +78,20 @@ app.patch("/", (req, res, next) => {
         });
 });
 
+/* Deleting records */
+app.delete("/:id", (req, res, next) => {
+    let del = 'DELETE from student_details WHERE id=?';
+    let params = [req.params.id];
+    student_details.run(del,params,(err,docs)=> {
+        if(!err){
+            console.log("Record Deleted");
+            res.status(200).json({ deletedID: this.changes })
+        }
+        else{
+            console.log('Error in deleting record: '+ JSON.stringify(err,undefined,2));
+            res.status(400).json({ "error": res.message });
+        }
+    });
+});
 
 module.exports = app;
