@@ -10,14 +10,14 @@ function view(){
             return response.json()
         })
         .then(student_details =>{
-            /*
+            /* 
             console.log(student_details);
             console.log("Length: "+student_details.length); */
             var length = student_details.length;
             var text = "";
             if(length > 0){
                 for(var i =0;i<length;i++){
-                    /*
+                    /* 
                     console.log(student_details[i].id);
                     console.log(student_details[i].name);
                     console.log(student_details[i].school);
@@ -32,7 +32,8 @@ function view(){
                             + student_details[i].school +"</td><td>"
                             + student_details[i].grade +"</td><td>"
                             + student_details[i].div +"</td><td>"
-                            + student_details[i].status +"</td></tr>"
+                            + student_details[i].status +"</td><td>"
+                            + "<a>Edit</a>"+"  "+"<a>Delete</a>" + "</td></tr>";
                 }
                 if(text!= ""){
                     $("#table").append(text).removeClass("hidden");
