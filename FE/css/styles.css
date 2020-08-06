@@ -130,4 +130,21 @@ body{
     font-size: 1.2em;
     box-shadow: 4px 8px navy;
 }
+
+/*Start: Table*/
+table, th, td {
+  border: 2px solid navy;
+}
+
+table{
+  width: 90%;
+  margin-top: 50px;
+}
+
+th,td{
+  padding: 2px 1.5px 2px 3px;
+}
+
+/*End: Table*/
+
 /*End: Body*/
