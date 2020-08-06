@@ -51,7 +51,7 @@ router.post('/', (req, res) => {
     let parameters = [reqBody.name,reqBody.age,reqBody.school,reqBody.grade,reqBody.div,reqBody.status];
     student_details.run(insert,parameters,(err,docs) => {
         if(!err){
-            res.status(201).json({"id": this.lastID});
+            res.status(200).json({"id": this.lastID});
             res.send(docs);
             console.log("Entry inserted into student_details");
         }
