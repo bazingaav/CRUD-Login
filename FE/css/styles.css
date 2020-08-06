@@ -185,22 +185,4 @@ table{
   border: 1px solid navy;
 }
 
-input.invalid, textarea.invalid{
-	border: 2px solid red;
-}
-
-input.valid, textarea.valid{
-	border: 2px solid green;
-}
-
-.error{
-	display: none;
-	margin-left: 10px;
-}		
-
-.error_show{
-	color: red;
-	margin-left: 10px;
-}
-
 /*----------------------End: add_student.html------------------*/

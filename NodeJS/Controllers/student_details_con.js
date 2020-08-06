@@ -34,7 +34,7 @@ router.get("/:id", (req, res) => {
             return res.status(400).send('No record with given id:'+ [req.params.id]);
         }
         else if (err == null & docs != null) {
-            res.status(200).json(docs);
+            return res.status(200).json(docs);
         }
         else{
             console.log('Error in getting student_details by id: '+ JSON.stringify(err,undefined,2));
@@ -47,13 +47,14 @@ router.get("/:id", (req, res) => {
 /* Inserting data into DB */
 router.post('/', (req, res) => {
     var reqBody = req.body;
+    console.log("In the api"); //temp
+    console.log(req.body);//temp
     let insert = 'INSERT into student_details (name,age,school,grade,div,status) VALUES (?,?,?,?,?,?)';
     let parameters = [reqBody.name,reqBody.age,reqBody.school,reqBody.grade,reqBody.div,reqBody.status];
+    console.log(parameters);
     student_details.run(insert,parameters,(err,docs) => {
         if(!err){
-            res.status(200).json({"id": this.lastID});
-            res.send(docs);
-            console.log("Entry inserted into student_details");
+            return res.status(200).json({"id": this.lastID});
         }
         else{
             console.log('Error in inserting student_details: '+ JSON.stringify(err,undefined,2));
@@ -70,12 +71,11 @@ router.patch("/", (req, res, next) => {
     student_details.run(update, parameters, (err, docs) => {
             if (!err) {
                 console.log("Record updated");
-                res.status(200).json({ updatedID: this.changes });
-                
+                return res.status(200).json({ updatedID: this.changes });
             }
             else{
                 console.log('Error in updating student_details: '+ JSON.stringify(err,undefined,2));
-                res.status(400).json({ "error": res.message });
+                return res.status(400).json({ "error": res.message });
             }
             
         });

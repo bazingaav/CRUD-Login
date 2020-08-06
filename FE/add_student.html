@@ -70,7 +70,7 @@
  </div>
  <div class="wrapper">
     <h2 class="text-center">Add New Student Data</h2>
-  <form id="add_student">
+  <form id="add_student" >
     <table class="table">
         <tr>
             <td><label for="name">Name: </label></td>
@@ -96,9 +96,9 @@
             <td>
                 <select id="school" name="school" required >
                     <option value="" disabled selected>School</option>
-                    <option value="stxaviers">St.Xaviers</option>
-                    <option value="ngv">N.G.V</option>
-                    <option value="national">National</option>
+                    <option value="St.Xaviers">St.Xaviers</option>
+                    <option value="N.G.V">N.G.V</option>
+                    <option value="National">National</option>
                   </select>
             </td>
         </tr>
@@ -121,27 +121,23 @@
             <td>
                 <select id="div" name="div" required >
                     <option value="" disabled selected>Division</option>
-                    <option value="a">A</option>
-                    <option value="b">B</option>
+                    <option value="A">A</option>
+                    <option value="B">B</option>
                   </select>
             </td>
         </tr>
         <tr>
             <td><label for="status">Status:</label></td>
             <td>
-                <input type="radio" id="active" name="status" value="active">
-                <label for="active">Active</label>
-                <input type="radio" id="inactive" name="status" value="inactive">
-                <label for="inactive">Inactive</label>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <input class="hidden" value="PQR">
+                <input type="radio" id="Active" name="status" value="Active">
+                <label for="Active">Active</label>
+                <input type="radio" id="Inactive" name="status" value="Inactive">
+                <label for="Inactive">Inactive</label>
             </td>
         </tr>
     </table>
-    <button id="add_student_reset" type="reset">Reset</button>&nbsp;<button id="add_student_button" type="submit" onsubmit="add_new_student_data()">Submit</button>
+    <button id="add_student_reset" type="reset">Reset</button><!--<button id="add_student_button">Submit</button>-->
+    <input type='submit' class='update_appointment_button' value='submit' />
   </form> 
  </div>
   

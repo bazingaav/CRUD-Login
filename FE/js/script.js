@@ -44,25 +44,26 @@ function view(){
         })
 }
 
-function add_new_student_data(){
-    console.log("Is it working yet?");
-    var data = $('form').serializeArray().reduce(function(obj, item) {
+$('#add_student').submit(function(e) {
+    e.preventDefault();
+    var vals = $(this).serializeArray().reduce(function(obj, item) {
         obj[item.name] = item.value;
         return obj;
-    }, {}); 
-}
-
-
-
-/* Validation */
-$(document).ready(function() {
-	$('#add_name').on('input', function() {
-        var input=$(this);
-        var is_name=input.val();
-        if(is_name){input.removeClass("invalid").addClass("valid");}
-        else{input.removeClass("valid").addClass("invalid");}
+    }, {});
+    console.log(vals);
+    console.log(JSON.stringify(vals));
+    fetch('http://localhost:3000/student_details',{
+        method: 'post',
+        headers: {
+            'Content-Type': 'application/json;charset=utf-8'
+          },
+        body: JSON.stringify(vals)
+    })
+    .then(response =>{
+        result= response.json();
+        alert(result.message);
     });
-});
+})
 
 
 function exportTableToExcel(tableID, filename = ''){
