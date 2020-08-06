@@ -131,20 +131,76 @@ body{
     box-shadow: 4px 8px navy;
 }
 
+.wrapper form{
+  margin-bottom: 20px;
+}
+
 /*Start: Table*/
 table, th, td {
-  border: 2px solid navy;
+  border: 1px solid navy;
 }
 
 table{
   width: 90%;
-  margin-top: 50px;
+  margin-top: 0px;
+  margin-bottom: 10px;
 }
-
-th,td{
-  padding: 2px 1.5px 2px 3px;
-}
-
 /*End: Table*/
+.wrapper #download{
+  padding: 1px 1px 1px 1px;
+  margin-top: 10px;
+  border: 2px solid navy;
+  font-weight: bold;
+  width: 150px;
+  color: navy;
+  background-color: #FFFFFF;
+}
 
 /*End: Body*/
+
+
+/*----------------------Start: add_student.html------------------*/
+.wrapper .table{
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  border: none;
+  margin-top:30px;
+}
+.wrapper .table td{
+  border:none;
+}
+
+.wrapper form #add_student_button,.wrapper form #add_student_reset{
+  margin:auto;
+  display:block;
+}
+
+.wrapper form #active,.wrapper form #inactive{
+  height: 10px;
+  padding: 0px;
+  width: 30px;
+  margin: 0px;
+  border: 1px solid navy;
+}
+
+input.invalid, textarea.invalid{
+	border: 2px solid red;
+}
+
+input.valid, textarea.valid{
+	border: 2px solid green;
+}
+
+.error{
+	display: none;
+	margin-left: 10px;
+}		
+
+.error_show{
+	color: red;
+	margin-left: 10px;
+}
+
+/*----------------------End: add_student.html------------------*/

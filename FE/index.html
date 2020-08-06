@@ -7,6 +7,8 @@
     <title>Student Details</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="css/simplePagination.css">
   </head>
 <body onload="view()">
 
@@ -46,7 +48,7 @@
  <div class="sidebar fixed">
    <ul class="sidebar-nav text-left">
      <li class="sidebar-brand"><a href="#">Students</a></li>
-     <li><a href="#">- Add Student</a></li>
+     <li><a href="./add_student.html">- Add Student</a></li>
      <li><a href="#">- View Student</a></li>
      <li><a href="#"></a></li>
      <li><a href="#"></a></li>
@@ -100,7 +102,8 @@
     </select>
     <button id="search" type="reset" class="pull-right" onclick="#">Submit</button>
   </form> 
-  <table id="table" class="hidden js-sort-table">
+  <table id="d_table" class="hidden js-sort-table" data-page-length="10" data-order="[[ 0, &quot;asc&quot; ]]">
+    <thead>
     <tr>
         <th>ID</th>
         <th>Name</th>
@@ -110,10 +113,11 @@
         <th>Division</th>
         <th>Status</th>
         <th></th>
-    </tr>
+    </tr></thead>
   </table>
+
   <div class="else_msg hidden"></div>
-  <h1>Hello there!</h1>
+  <button id="download" class="pull-left" onclick="exportTableToExcel('d_table')">Download Excel</button>
 
  </div>
   
@@ -123,5 +127,7 @@
   <script src="js/bootstrap.min.js"></script>
   <script src="js/script.js"></script>
   <script src="js/sort-table-min.js"></script>
+  <script src="js/jquery.dataTables.min.js"></script>
+
 </body>
 </html>
