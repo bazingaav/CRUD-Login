@@ -82,17 +82,23 @@ router.patch("/", (req, res, next) => {
 });
 
 /* Deleting records */
-router.delete("/:id", (req, res, next) => {
+router.delete("/", (req, res) => {
+    var reqBody = req.body;
+    console.log(reqBody);
     let del = 'DELETE from student_details WHERE id=?';
-    let params = [req.params.id];
+    let params = [reqBody.id];
+    console.log(params);
+    if(params==undefined){
+        return res.status(400).json({ "error": res.message });
+    }
     student_details.run(del,params,(err,docs)=> {
         if(!err){
             console.log("Record Deleted");
-            res.status(200).json({ deletedID: this.changes })
+            return res.status(200).json({ deletedID: this.changes })
         }
         else{
             console.log('Error in deleting record: '+ JSON.stringify(err,undefined,2));
-            res.status(400).json({ "error": res.message });
+            return res.status(400).json({ "error": res.message });
         }
     });
 });
