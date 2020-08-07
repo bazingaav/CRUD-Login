@@ -103,7 +103,7 @@ body{
     background-color: aliceblue;
 }
 
-.wrapper form select, .wrapper form #add_name{
+.wrapper form select,.wrapper form #name, .wrapper form #add_name{
     height: 22px;
     padding: 1px 2px 1px 2px;
     width: 140px;
@@ -115,7 +115,7 @@ body{
     width: 200px;
 }
 
-.wrapper form button, .wrapper form #add_student_button{
+.wrapper form button, .wrapper form #search,.wrapper form #add_student_button{
     padding: 2px 2px 2px 2px;
     margin-left: 10px;
     margin-right: 10px;
@@ -126,7 +126,7 @@ body{
     color: navy;
     background-color: #FFFFFF;
 }
-.wrapper form button:hover ,.wrapper form #add_student_button:hover{
+.wrapper button:hover ,.wrapper form #search:hover,.wrapper form #add_student_button:hover{
     font-size: 1.2em;
     box-shadow: 4px 8px navy;
 }

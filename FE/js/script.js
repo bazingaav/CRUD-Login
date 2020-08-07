@@ -62,6 +62,7 @@ $('#add_student').submit(function(e) {
     .then(response =>{
         if(response.ok){
             alert("Data Submitted Successfully");
+            $('#add_student').trigger("reset");
         }
         else{
             alert("HTTP-Error: " + response.status);
