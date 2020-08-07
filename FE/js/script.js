@@ -6,7 +6,7 @@ $(window).on('load',function(){
         })
         .then(student_details =>{
             var len = student_details.length;
-            var text = "";
+            var text = "<tbody>";
             if(len > 0){
                 for(var i =0;i<len;i++){
                     text += "<tr row_id="+student_details[i].id+"><td>"
@@ -21,6 +21,14 @@ $(window).on('load',function(){
                             + "<input type=\"button\" value=\"Delete\" onclick=\"delete_rec("+student_details[i].id+")\" id="+student_details[i].id+"_d></td></tr>";
                 }
                 if(text!= ""){
+                    text+= "<tfoot><tr><th>ID</th>\
+                    <th>Name</th>\
+                    <th>Age</th>\
+                    <th>School</th>\
+                    <th>Grade</th>\
+                    <th>Division</th>\
+                    <th>Status</th>\
+                    <th></th></tr></tfoot>"
                     $("#d_table").append(text).removeClass("hidden");
                     $('#d_table').DataTable({
                         "searching":false,
