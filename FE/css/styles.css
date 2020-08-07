@@ -115,7 +115,7 @@ body{
     width: 200px;
 }
 
-.wrapper form button, .wrapper form #search,.wrapper form #add_student_button{
+.wrapper form button, .wrapper form #search,.wrapper form #add_student_button, .wrapper form #m_submit{
     padding: 2px 2px 2px 2px;
     margin-left: 10px;
     margin-right: 10px;
@@ -126,7 +126,7 @@ body{
     color: navy;
     background-color: #FFFFFF;
 }
-.wrapper button:hover ,.wrapper form #search:hover,.wrapper form #add_student_button:hover{
+.wrapper button:hover ,.wrapper form #search:hover,.wrapper form #add_student_button:hover, .wrapper form #m_submit:hover{
     font-size: 1.2em;
     box-shadow: 4px 8px navy;
 }
