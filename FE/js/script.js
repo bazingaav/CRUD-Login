@@ -60,8 +60,12 @@ $('#add_student').submit(function(e) {
         body: JSON.stringify(vals)
     })
     .then(response =>{
-        result= response.json();
-        alert(result.message);
+        if(response.ok){
+            alert("Data Submitted Successfully");
+        }
+        else{
+            alert("HTTP-Error: " + response.status);
+        }
     });
 })
 
