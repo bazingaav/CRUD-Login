@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Add Student Details</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="css/simplePagination.css">
+  </head>
+<body>
+  <header>
+    <nav id="header-nav" class="navbar navbar-default">
+        <div class="container-fluid">
+          
+          <div class="navbar-header">
+            <!-- Start: Logo-->
+            <a href="index.html" class="pull-left">
+              <div id="logo-img" alt="Lead Logo"></div>
+            </a>
+            <!--End: Logo-->
+            <button id="navbarToggle" type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#collapsable-nav" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+          </div> <!-- navbar header -->
+            <!--Start: Bell & User Name-->
+          <div id="collapsable-nav" class="collapse navbar-collapse">
+            <ul id="nav-list" class="nav navbar-nav navbar-right">
+              <li>
+                <a href="#" class="text-center">
+                  <span class="glyphicon glyphicon-bell"></span></a>
+              </li>
+              <li>
+                <a href="#" class="text-center">User Name</a>
+              </li>
+            </ul><!-- #nav-list  -->
+            <!--End: Bell & User Name-->
+          </div>
+        </div><!-- /.container-fluid -->
+      </nav>
+ </header>
+ <div class="sidebar fixed">
+   <ul class="sidebar-nav text-left">
+     <li class="sidebar-brand"><a href="#">Students</a></li>
+     <li><a href="./index.html">- View Students</a></li>
+     <li><a href="#"></a></li>
+     <li><a href="#"></a></li>
+     <li><a href="#"></a></li>
+     <li><a href="#"></a></li>
+     <li><a href="#"></a></li>
+     <li><a href="#"></a></li>
+     <li><a href="#"></a></li>
+     <li><a href="#"></a></li>
+     <li><a href="#"></a></li>
+     <li><a href="#"></a></li>
+     <li><a href="#"></a></li>
+     <li><a href="#"></a></li>
+     <li><a href="#"></a></li>
+     <li><a href="#"></a></li>
+     <li><a href="#"></a></li>
+     <li><a href="#"></a></li>
+     <li><a href="#"></a></li>
+   </ul>
+ </div>
+ <div class="wrapper">
+<h2 class="text-center">Edit Student Data</h2>
+  <form id="m_form">
+        <input id="db_id" value="" hidden>
+        Name:<input id="m_name"><br><br>
+        Age:<input id="m_age" value=" "><br><br>
+        School:<input id="m_school" value=" "><br><br>
+        Class: <input id="m_grade" value=" "><br><br>
+        Division: <input id="m_div" value=" "><br><br>
+        Status: <input id="m_status" value=" "><br><br>
+    <input type="button"  id="m_submit" value="Submit"/>&nbsp;<button type="button" onclick="location.href='index.html';">Close</button>
+  </form> 
+ </div>
+
+  <script src="js/jquery-1.11.3.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/script.js"></script>
+  <script src="js/sort-table-min.js"></script>
+  <script src="js/jquery.dataTables.min.js"></script>
+  <script>
+    var queryString = decodeURIComponent(window.location.search);
+    queryString = queryString.substring(1);
+    var queries = queryString.split("&");    
+    $(document).ready(function(){
+        try{
+            $('#db_id').val((queries[0]));
+            $('#m_name').val((queries[1]));
+            $('#m_age').val((queries[2]));
+            $('#m_school').val((queries[3]));
+            $('#m_grade').val((queries[4]));
+            $('#m_div').val((queries[5]));
+            $('#m_status').val((queries[6]));
+        }
+        catch{
+            alert("Whaat!");
+        }
+    });
+</script>
+
+</body>
+</html>
