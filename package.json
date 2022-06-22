@@ -2,7 +2,7 @@
   "dependencies": {
     "ansi-regex": "^6.0.1",
     "ini": "^2.0.0",
-    "sqlite3": "^5.0.2",
+    "sqlite3": "^5.0.3",
     "tar": "^4.4.18"
   }
 }
